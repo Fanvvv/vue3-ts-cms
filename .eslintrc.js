@@ -17,6 +17,8 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    '@typescript-eslint/no-var-requires': 'off'
+    '@typescript-eslint/no-var-requires': 'off', // 模块引入方式
+    '@typescript-eslint/no-explicit-any': 'off', // 可以使用 any 类型
+    '@typescript-eslint/explicit-module-boundary-types': 'off' // 函数可以没有返回值
   }
 }
