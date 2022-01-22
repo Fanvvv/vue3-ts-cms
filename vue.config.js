@@ -5,6 +5,19 @@ const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
 module.exports = {
   // outputDir: './build', // 默认为 dist
+  // 配置代理
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://152.136.185.210:4000/',
+        pathRewrite: {
+          '^/api': ''
+        },
+        ws: true,
+        changeOrigin: true
+      }
+    }
+  },
   configureWebpack: {
     // 设置别名的方法，三种方法效果是一样的
     // 第一种
